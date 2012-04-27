@@ -57,7 +57,8 @@ for testcase in range(testcases):
     frontierKeys[corner[1]] = corner[0]
     explored = {}
     goalCorner = (N*2-1,M*2-1)
-    #print goalCorner
+    print N,M
+    print goalCorner
     while frontier:
         #print frontier
         #Get the lowest cost node in the frontier
@@ -175,7 +176,7 @@ for testcase in range(testcases):
                 S = intersections[down[0]/2][down[1]/2][0]
                 W = intersections[down[0]/2][down[1]/2][1]
                 patternPosition = cost-T
-                if patternPosition%(S+W) > S:
+                if patternPosition%(S+W) >= S:
                     #then it's off, lets get the time to turn
                     timeToGreen = (S+W)-patternPosition%(S+W)
                     cost += 1+timeToGreen
